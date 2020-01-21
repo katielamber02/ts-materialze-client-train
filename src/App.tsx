@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Navbar from "./components/Navbar";
 import "materialize-css/dist/css/materialize.min.css";
 import { TodoForm } from "./components/TodoForm";
@@ -7,6 +7,15 @@ import { ITodo } from "./interfaces";
 
 const App: React.FC = () => {
   const [todos, setTodos] = useState<ITodo[]>([]);
+
+  useEffect(() => {
+    const saved = JSON.parse(localStorage.getItem("todos") || "[]") as ITodo[];
+    setTodos(saved);
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem("todos", JSON.stringify(todos));
+  }, [todos]);
 
   const addHandler = (title: string) => {
     console.log("Add todo", title);
