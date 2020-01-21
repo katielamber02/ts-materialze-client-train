@@ -34,7 +34,7 @@ code {
   justify-content: space-between;
   cursor: pointer;
   padding: 1rem;
-  background: #f3f3f3;
+  background: greenyellow;
 }
 .todo i {
   z-index: 2;
