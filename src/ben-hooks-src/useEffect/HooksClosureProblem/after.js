@@ -22,6 +22,14 @@ export default function App() {
   // // clicked 1 => 2
   // // alert 1 => alert 2
 
+  // or clean up function
+  // useEffect(() => {
+  //   const t = setTimeout(() => {
+  //    alert('You clicked on: ' + count);
+  //   }, 3000);
+  //   return () => { clearTimeout(t); };
+  //  }, [count]);
+
   return (
     <div>
       <p>You clicked {count} times</p>

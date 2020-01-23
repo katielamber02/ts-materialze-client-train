@@ -1,11 +1,13 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 
 import { useForm } from "../useState/useForm";
-import HooksClosureProblemBefore from "./HooksClosureProblem/before";
-import HooksClosureProblemAfter from "./HooksClosureProblem/after";
+// import HooksClosureProblemBefore from "./HooksClosureProblem/before";
+// import HooksClosureProblemAfter from "./HooksClosureProblem/after";
+import { Hello } from "./HelloForUnmount";
 
 export const Main1 = () => {
   const [values, handleChange] = useForm({ email: "", password: "" });
+  const [showHello, setHello] = useState(true);
   console.log("values:", values);
   useEffect(() => {
     console.log("render");
@@ -23,8 +25,12 @@ export const Main1 = () => {
         value={values.password}
         onChange={handleChange}
       />
-      <HooksClosureProblemBefore />
-      <HooksClosureProblemAfter />
+      {/* <HooksClosureProblemBefore />
+      <HooksClosureProblemAfter /> */}
+      <button onClick={() => setHello(!showHello)}>
+        {showHello ? "hide" : "show"}
+      </button>
+      {showHello && <Hello />}
     </div>
   );
 };

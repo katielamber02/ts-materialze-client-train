@@ -8,6 +8,8 @@ import React, { useState, useRef, useEffect } from "react";
 export default function App() {
   const [count, setCount] = useState(0);
 
+  // because react state is a new object every time setState is called?
+
   // useEffect(() => {
   //   setTimeout(() => {
   //     alert("AFTER You clicked on: " + count);
