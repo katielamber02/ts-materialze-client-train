@@ -1,22 +1,23 @@
 import React, { useState } from "react";
 
 // [___1___]
-export const Main = () => {
-  const [count, setCount] = useState(10);
-  console.log(count);
+// export const Main = () => {
+//   const [count, setCount] = useState(10);
+//   console.log(count);
 
-  return (
-    <div>
-      <button onClick={() => setCount(count + 1)}>+</button>
-      <button onClick={() => setCount(count + 1)}>+</button>
+//   return (
+//     <div>
+//       <button onClick={() => setCount(count + 1)}>+</button>
+//       <button onClick={() => setCount(count + 1)}>+</button>
 
-      {/* <button onClick={() => setCount(c => c + 1)}>+</button>
-      <button onClick={() => setCount(c => c + 1)}>+</button>
-      */}
-      {count}
-    </div>
-  );
-};
+//       {/* <button onClick={() => setCount(c => c + 1)}>+</button>
+//       <button onClick={() => setCount(c => c + 1)}>+</button>
+//       */}
+//       {count}
+//       <ImageSlider />
+//     </div>
+//   );
+// };
 
 // [___2___]
 // export const Main = () => {
@@ -70,14 +71,15 @@ export const Main = () => {
 
 // [___4___]
 
-// import { useForm } from "./useForm";
-// export const Main = () => {
-//   const [values, handleChange] = useForm({ email: "", password: "" });
-//   console.log("values:", values);
-//   return (
-//     <div>
-//       <input name="email" value={values.email} onChange={handleChange} />
-//       <input type="password" value={values.password} onChange={handleChange} />
-//     </div>
-//   );
-// };
+import { useForm } from "./useForm";
+import ImageSlider from "./ImageSlider";
+export const Main = () => {
+  const [values, handleChange] = useForm({ email: "", password: "" });
+  console.log("values:", values);
+  return (
+    <div>
+      <input name="email" value={values.email} onChange={handleChange} />
+      <input type="password" value={values.password} onChange={handleChange} />
+    </div>
+  );
+};

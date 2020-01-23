@@ -1,23 +1,16 @@
 import { useState } from "react";
 
-export const useForm = (initialValues: object) => {
+export const useForm = (initialValues: any) => {
   const [values, setValues] = useState(initialValues);
-  console.log([
-    values,
-    (event: any) =>
-      setValues({
-        ...values,
-        [event.target.name]: event.target.value
-      })
-  ]);
 
   return [
     values,
-    (event: any) =>
+    (e: any) => {
       setValues({
         ...values,
-        [event.target.name]: event.target.value
-      })
+        [e.target.name]: e.target.value
+      });
+    }
   ];
 };
 
